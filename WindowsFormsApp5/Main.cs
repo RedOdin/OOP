@@ -23,11 +23,10 @@ namespace WindowsFormsApp5
         private float thickness = 3;
 
         private bool mouseIsDown = false;
-        private int x1, y1, x2, y2, width, height;
+        private static int x1 = 0, y1 = 0, x2 = 0, y2 = 0, width = (x2 - x1), height;
 
         private Figures newFigure;
         private int figureType = 0;
-
 
         public Main()
         {
@@ -35,6 +34,8 @@ namespace WindowsFormsApp5
             Init();
             pen = new Pen(color, thickness);
         }
+
+
 
         private void Init()
         {
@@ -128,14 +129,31 @@ namespace WindowsFormsApp5
             figureType = 8;
         }
 
+        int SaveX, SaveY;
+
+
         private void MysticalDraw_Paint(object sender, PaintEventArgs e)
         {
             if (x1 >= 0 && y1 >= 0 && x2 >= 0 && y2 >= 0)
             {
-
                 width = (x2 - x1);
+                SaveX = x1;
+                if (width < 0)
+                {
+                    SaveX = x1;
+                    x1 = x2;
+                    //x2 = SaveX;
+                }
+                width = Math.Abs(width);
                 height = (y2 - y1);
-
+                SaveY = y1;
+                if (height < 0)
+                {
+                    SaveY = y1;
+                    y1 = y2;
+                    // y2 = SaveY;
+                }
+                height = Math.Abs(height);
                 switch (figureType)
                 {
 
@@ -176,6 +194,10 @@ namespace WindowsFormsApp5
                         newFigure = new Rhombus(x1, y1, x2, y2, pen);
                         break;
 
+                    case 8:
+                        newFigure = new Triangle(x1, y1, x2, y2, pen);
+                        break;
+
                 }
 
                 if (figureType != 1)
@@ -185,6 +207,8 @@ namespace WindowsFormsApp5
                 }
 
                 newFigure.Draw(graphics);
+              //  x1 = SaveX;
+              //  y1 = SaveY;
 
             }
         }

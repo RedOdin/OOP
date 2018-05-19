@@ -61,6 +61,7 @@
     <Compile Include="Rectangle.cs" />
     <Compile Include="Rhombus.cs" />
     <Compile Include="Square.cs" />
+    <Compile Include="Triangle.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

@@ -47,6 +47,8 @@
             this.TriangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WidthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.MysticalDraw)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -101,17 +103,20 @@
             // 
             // newToolStripMenuItem
             // 
+            this.newToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
@@ -119,18 +124,21 @@
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem,
+            this.redoToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.editToolStripMenuItem.Text = "Edit";
@@ -228,6 +236,24 @@
             this.WidthToolStripMenuItem.Name = "WidthToolStripMenuItem";
             this.WidthToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
             // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.undoToolStripMenuItem.Text = "Undo";
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.redoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("redoToolStripMenuItem.Image")));
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.redoToolStripMenuItem.Text = "Redo";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,6 +292,8 @@
         private System.Windows.Forms.ToolStripMenuItem TriangleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WidthToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
     }
 }
 
