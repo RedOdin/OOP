@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circle.cs" />
+    <Compile Include="Ellipse.cs" />
     <Compile Include="Figures.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Main.cs">
@@ -56,6 +58,9 @@
     <Compile Include="ListOfFigures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="Rhombus.cs" />
+    <Compile Include="Square.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

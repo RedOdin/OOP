@@ -51,7 +51,6 @@ namespace WindowsFormsApp5
             y1 = y2 = e.Y;
         }
 
-
         private void MysticalDraw_MouseLeave(object sender, EventArgs e)
         {
             //  pen = new Pen(color, thickness);
@@ -89,9 +88,44 @@ namespace WindowsFormsApp5
             }
         }
 
+        private void PenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figureType = 1;
+        }
+
         private void LineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             figureType = 2;
+        }
+
+        private void EllipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figureType = 3;
+        }
+
+        private void CircleToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            figureType = 4;
+        }
+
+        private void RectangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figureType = 5;
+        }
+
+        private void SquareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figureType = 6;
+        }
+
+        private void RhombusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figureType = 7;
+        }
+
+        private void TriangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figureType = 8;
         }
 
         private void MysticalDraw_Paint(object sender, PaintEventArgs e)
@@ -99,8 +133,8 @@ namespace WindowsFormsApp5
             if (x1 >= 0 && y1 >= 0 && x2 >= 0 && y2 >= 0)
             {
 
-                width = Math.Abs(x1 - x2);
-                height = Math.Abs(y1 - y2);
+                width = (x2 - x1);
+                height = (y2 - y1);
 
                 switch (figureType)
                 {
@@ -122,25 +156,25 @@ namespace WindowsFormsApp5
                         newFigure = new Line(x1, y1, x2, y2, pen);
                         break;
 
-                        //case 3:
-                        //    newFigure = new Ellipse(x1, y1, width, height, pen);
-                        //    break;
+                    case 3:
+                        newFigure = new Ellipse(x1, y1, width, height, pen);
+                        break;
 
-                        //case 4:
-                        //    newFigure = new Circle(x1, y1, (width <= height) ? width : height, pen);
-                        //    break;
+                    case 4:
+                        newFigure = new Circle(x1, y1, (width <= height) ? width : height, pen);
+                        break;
 
-                        //case 5:
-                        //    newFigure = new Rectangle(x1, y1, width, height, pen);
-                        //    break;
+                    case 5:
+                        newFigure = new Rectangle(x1, y1, width, height, pen);
+                        break;
 
-                        //case 6:
-                        //    newFigure = new Square(x1, y1, (width <= height) ? width : height, pen);
-                        //    break;
+                    case 6:
+                        newFigure = new Square(x1, y1, (width <= height) ? width : height, pen);
+                        break;
 
-                        //case 7:
-                        //    newFigure = new Rhombus(x1, y1, x2, y2, pen);
-                        //    break;
+                    case 7:
+                        newFigure = new Rhombus(x1, y1, x2, y2, pen);
+                        break;
 
                 }
 

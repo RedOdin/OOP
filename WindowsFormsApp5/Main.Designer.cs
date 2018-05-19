@@ -37,13 +37,16 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ewewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sdgToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fdhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dfhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CircleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.EllipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SquareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RectangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RhombusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TriangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WidthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.MysticalDraw)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +57,7 @@
             this.MysticalDraw.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MysticalDraw.Location = new System.Drawing.Point(0, 28);
             this.MysticalDraw.Name = "MysticalDraw";
-            this.MysticalDraw.Size = new System.Drawing.Size(800, 422);
+            this.MysticalDraw.Size = new System.Drawing.Size(850, 516);
             this.MysticalDraw.TabIndex = 0;
             this.MysticalDraw.TabStop = false;
             this.MysticalDraw.Paint += new System.Windows.Forms.PaintEventHandler(this.MysticalDraw_Paint);
@@ -70,16 +73,19 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.ewewToolStripMenuItem,
+            this.PenToolStripMenuItem,
             this.LineToolStripMenuItem,
-            this.sdgToolStripMenuItem1,
-            this.dToolStripMenuItem,
-            this.fdhToolStripMenuItem,
-            this.dfhToolStripMenuItem,
-            this.hdfToolStripMenuItem});
+            this.CircleToolStripMenuItem1,
+            this.EllipseToolStripMenuItem,
+            this.SquareToolStripMenuItem,
+            this.RectangleToolStripMenuItem,
+            this.RhombusToolStripMenuItem,
+            this.TriangleToolStripMenuItem,
+            this.ColorToolStripMenuItem,
+            this.WidthToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip.Size = new System.Drawing.Size(850, 28);
             this.menuStrip.TabIndex = 1;
             // 
             // fileToolStripMenuItem
@@ -95,6 +101,7 @@
             // 
             // newToolStripMenuItem
             // 
+            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
@@ -109,6 +116,7 @@
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
@@ -116,6 +124,7 @@
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -126,13 +135,14 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // ewewToolStripMenuItem
+            // PenToolStripMenuItem
             // 
-            this.ewewToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ewewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ewewToolStripMenuItem.Image")));
-            this.ewewToolStripMenuItem.Margin = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.ewewToolStripMenuItem.Name = "ewewToolStripMenuItem";
-            this.ewewToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            this.PenToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("PenToolStripMenuItem.Image")));
+            this.PenToolStripMenuItem.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.PenToolStripMenuItem.Name = "PenToolStripMenuItem";
+            this.PenToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            this.PenToolStripMenuItem.Click += new System.EventHandler(this.PenToolStripMenuItem_Click);
             // 
             // LineToolStripMenuItem
             // 
@@ -143,53 +153,86 @@
             this.LineToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
             this.LineToolStripMenuItem.Click += new System.EventHandler(this.LineToolStripMenuItem_Click);
             // 
-            // sdgToolStripMenuItem1
+            // CircleToolStripMenuItem1
             // 
-            this.sdgToolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.sdgToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("sdgToolStripMenuItem1.Image")));
-            this.sdgToolStripMenuItem1.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.sdgToolStripMenuItem1.Name = "sdgToolStripMenuItem1";
-            this.sdgToolStripMenuItem1.Size = new System.Drawing.Size(32, 24);
+            this.CircleToolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CircleToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("CircleToolStripMenuItem1.Image")));
+            this.CircleToolStripMenuItem1.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.CircleToolStripMenuItem1.Name = "CircleToolStripMenuItem1";
+            this.CircleToolStripMenuItem1.Size = new System.Drawing.Size(32, 24);
+            this.CircleToolStripMenuItem1.Click += new System.EventHandler(this.CircleToolStripMenuItem1_Click);
             // 
-            // dToolStripMenuItem
+            // EllipseToolStripMenuItem
             // 
-            this.dToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.dToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dToolStripMenuItem.Image")));
-            this.dToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
-            this.dToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
-            this.dToolStripMenuItem.Text = "d";
+            this.EllipseToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.EllipseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("EllipseToolStripMenuItem.Image")));
+            this.EllipseToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.EllipseToolStripMenuItem.Name = "EllipseToolStripMenuItem";
+            this.EllipseToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            this.EllipseToolStripMenuItem.Text = "d";
+            this.EllipseToolStripMenuItem.Click += new System.EventHandler(this.EllipseToolStripMenuItem_Click);
             // 
-            // fdhToolStripMenuItem
+            // SquareToolStripMenuItem
             // 
-            this.fdhToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.fdhToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fdhToolStripMenuItem.Image")));
-            this.fdhToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.fdhToolStripMenuItem.Name = "fdhToolStripMenuItem";
-            this.fdhToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
-            this.fdhToolStripMenuItem.Text = "fdh";
+            this.SquareToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SquareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SquareToolStripMenuItem.Image")));
+            this.SquareToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.SquareToolStripMenuItem.Name = "SquareToolStripMenuItem";
+            this.SquareToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            this.SquareToolStripMenuItem.Text = "fdh";
+            this.SquareToolStripMenuItem.Click += new System.EventHandler(this.SquareToolStripMenuItem_Click);
             // 
-            // dfhToolStripMenuItem
+            // RectangleToolStripMenuItem
             // 
-            this.dfhToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.dfhToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dfhToolStripMenuItem.Image")));
-            this.dfhToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dfhToolStripMenuItem.Name = "dfhToolStripMenuItem";
-            this.dfhToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
-            this.dfhToolStripMenuItem.Text = "dfh";
+            this.RectangleToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RectangleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("RectangleToolStripMenuItem.Image")));
+            this.RectangleToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.RectangleToolStripMenuItem.Name = "RectangleToolStripMenuItem";
+            this.RectangleToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            this.RectangleToolStripMenuItem.Text = "dfh";
+            this.RectangleToolStripMenuItem.Click += new System.EventHandler(this.RectangleToolStripMenuItem_Click);
             // 
-            // hdfToolStripMenuItem
+            // RhombusToolStripMenuItem
             // 
-            this.hdfToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.hdfToolStripMenuItem.Name = "hdfToolStripMenuItem";
-            this.hdfToolStripMenuItem.Size = new System.Drawing.Size(12, 24);
-            this.hdfToolStripMenuItem.Text = "hdf";
+            this.RhombusToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RhombusToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("RhombusToolStripMenuItem.Image")));
+            this.RhombusToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.RhombusToolStripMenuItem.Name = "RhombusToolStripMenuItem";
+            this.RhombusToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            this.RhombusToolStripMenuItem.Click += new System.EventHandler(this.RhombusToolStripMenuItem_Click);
+            // 
+            // TriangleToolStripMenuItem
+            // 
+            this.TriangleToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TriangleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TriangleToolStripMenuItem.Image")));
+            this.TriangleToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.TriangleToolStripMenuItem.Name = "TriangleToolStripMenuItem";
+            this.TriangleToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            this.TriangleToolStripMenuItem.Click += new System.EventHandler(this.TriangleToolStripMenuItem_Click);
+            // 
+            // ColorToolStripMenuItem
+            // 
+            this.ColorToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ColorToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ColorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ColorToolStripMenuItem.Image")));
+            this.ColorToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.ColorToolStripMenuItem.Name = "ColorToolStripMenuItem";
+            this.ColorToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
+            // 
+            // WidthToolStripMenuItem
+            // 
+            this.WidthToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.WidthToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.WidthToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("WidthToolStripMenuItem.Image")));
+            this.WidthToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.WidthToolStripMenuItem.Name = "WidthToolStripMenuItem";
+            this.WidthToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(850, 544);
             this.Controls.Add(this.MysticalDraw);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
@@ -213,13 +256,16 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ewewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LineToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sdgToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fdhToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dfhToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hdfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CircleToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem EllipseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SquareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RectangleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RhombusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TriangleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem WidthToolStripMenuItem;
     }
 }
 
