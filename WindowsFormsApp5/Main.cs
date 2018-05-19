@@ -35,7 +35,7 @@ namespace WindowsFormsApp5
 
         private void MysticalDraw_MouseLeave(object sender, EventArgs e)
         {
-            pen = new Pen(color, thickness);
+          //  pen = new Pen(color, thickness);
         }
 
         private void MysticalDraw_MouseMove(object sender, MouseEventArgs e)
@@ -75,8 +75,70 @@ namespace WindowsFormsApp5
             figureType = 2;
         }
 
+        private void LineToolStripMenuItem_Paint(object sender, PaintEventArgs e)
+        {
+            if (x1 >= 0 && y1 >= 0 && x2 >= 0 && y2 >= 0)
+            {
+
+                width = Math.Abs(x1 - x2);
+                height = Math.Abs(y1 - y2);
+
+                switch (figureType)
+                {
+
+                    case 0:
+                        return;
+
+                    case 1:
+                        newFigure = new Line(x1, y1, x2, y2, pen);
+
+                        if (newFigure != null)
+                        {
+                            ListOfFigures.AddFigures(newFigure);
+                        }
+
+                        break;
+
+                    case 2:
+                        newFigure = new Line(x1, y1, x2, y2, pen);
+                        break;
+
+                        //case 3:
+                        //    newFigure = new Ellipse(x1, y1, width, height, pen);
+                        //    break;
+
+                        //case 4:
+                        //    newFigure = new Circle(x1, y1, (width <= height) ? width : height, pen);
+                        //    break;
+
+                        //case 5:
+                        //    newFigure = new Rectangle(x1, y1, width, height, pen);
+                        //    break;
+
+                        //case 6:
+                        //    newFigure = new Square(x1, y1, (width <= height) ? width : height, pen);
+                        //    break;
+
+                        //case 7:
+                        //    newFigure = new Rhombus(x1, y1, x2, y2, pen);
+                        //    break;
+
+                }
+
+                if (figureType != 1)
+                {
+                    Init();
+                    ListOfFigures.DrawFigures(graphics);
+                }
+
+                newFigure.Draw(graphics);
+
+            }
+        }
+
         private Figures newFigure;
         private int figureType = 0;
+
 
         public Main()
         {

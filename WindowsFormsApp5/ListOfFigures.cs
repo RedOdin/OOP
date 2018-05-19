@@ -27,15 +27,15 @@ namespace WindowsFormsApp5
 
         }
 
-        //public static void DrawFigures(Graphics graphics)
-        //{
+        public static void DrawFigures(Graphics graphics)
+        {
 
-        //    foreach (Figures figure in list)
-        //    {
-        //        figure.Draw(graphics);
-        //    }
+            foreach (Figures figure in list)
+            {
+                figure.Draw(graphics);
+            }
 
-        //}
+        }
 
         public static void Clear()
         {

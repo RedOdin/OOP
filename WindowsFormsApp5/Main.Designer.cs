@@ -141,6 +141,7 @@
             this.LineToolStripMenuItem.Name = "LineToolStripMenuItem";
             this.LineToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
             this.LineToolStripMenuItem.Click += new System.EventHandler(this.LineToolStripMenuItem_Click);
+            this.LineToolStripMenuItem.Paint += new System.Windows.Forms.PaintEventHandler(this.LineToolStripMenuItem_Paint);
             // 
             // sdgToolStripMenuItem1
             // 
