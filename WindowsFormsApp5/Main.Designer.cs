@@ -57,6 +57,7 @@
             this.MysticalDraw.Size = new System.Drawing.Size(800, 422);
             this.MysticalDraw.TabIndex = 0;
             this.MysticalDraw.TabStop = false;
+            this.MysticalDraw.Paint += new System.Windows.Forms.PaintEventHandler(this.MysticalDraw_Paint);
             this.MysticalDraw.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MysticalDraw_MouseDown);
             this.MysticalDraw.MouseLeave += new System.EventHandler(this.MysticalDraw_MouseLeave);
             this.MysticalDraw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MysticalDraw_MouseMove);
@@ -141,7 +142,6 @@
             this.LineToolStripMenuItem.Name = "LineToolStripMenuItem";
             this.LineToolStripMenuItem.Size = new System.Drawing.Size(32, 24);
             this.LineToolStripMenuItem.Click += new System.EventHandler(this.LineToolStripMenuItem_Click);
-            this.LineToolStripMenuItem.Paint += new System.Windows.Forms.PaintEventHandler(this.LineToolStripMenuItem_Paint);
             // 
             // sdgToolStripMenuItem1
             // 

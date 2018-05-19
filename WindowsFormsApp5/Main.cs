@@ -25,6 +25,24 @@ namespace WindowsFormsApp5
         private bool mouseIsDown = false;
         private int x1, y1, x2, y2, width, height;
 
+        private Figures newFigure;
+        private int figureType = 0;
+
+
+        public Main()
+        {
+            InitializeComponent();
+            Init();
+            pen = new Pen(color, thickness);
+        }
+
+        private void Init()
+        {
+            bitmap = new Bitmap(MysticalDraw.Width, MysticalDraw.Height);
+            graphics = Graphics.FromImage(bitmap);
+            MysticalDraw.Image = bitmap;
+        }
+
         private void MysticalDraw_MouseDown(object sender, MouseEventArgs e)
         {
             mouseIsDown = true;
@@ -33,9 +51,10 @@ namespace WindowsFormsApp5
             y1 = y2 = e.Y;
         }
 
+
         private void MysticalDraw_MouseLeave(object sender, EventArgs e)
         {
-          //  pen = new Pen(color, thickness);
+            //  pen = new Pen(color, thickness);
         }
 
         private void MysticalDraw_MouseMove(object sender, MouseEventArgs e)
@@ -75,7 +94,7 @@ namespace WindowsFormsApp5
             figureType = 2;
         }
 
-        private void LineToolStripMenuItem_Paint(object sender, PaintEventArgs e)
+        private void MysticalDraw_Paint(object sender, PaintEventArgs e)
         {
             if (x1 >= 0 && y1 >= 0 && x2 >= 0 && y2 >= 0)
             {
@@ -134,24 +153,6 @@ namespace WindowsFormsApp5
                 newFigure.Draw(graphics);
 
             }
-        }
-
-        private Figures newFigure;
-        private int figureType = 0;
-
-
-        public Main()
-        {
-            InitializeComponent();
-            Init();
-            pen = new Pen(color, thickness);
-        }
-
-        private void Init()
-        {
-            bitmap = new Bitmap(MysticalDraw.Width, MysticalDraw.Height);
-            graphics = Graphics.FromImage(bitmap);
-            MysticalDraw.Image = bitmap;
         }
     }
 }
