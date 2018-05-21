@@ -129,31 +129,36 @@ namespace WindowsFormsApp5
             figureType = 8;
         }
 
-        int SaveX, SaveY;
+        private int SaveX, SaveY;
 
+        //private void Fgineric()
+        //{
+        //    width = (x2 - x1);
+        //    SaveX = x1;
+        //    if (width < 0)
+        //    {
+        //        SaveX = x1;
+        //        x1 = x2;
+        //        //x2 = SaveX;
+        //    }
+        //    width = Math.Abs(width);
+        //    height = (y2 - y1);
+        //    SaveY = y1;
+        //    if (height < 0)
+        //    {
+        //        SaveY = y1;
+        //        y1 = y2;
+        //        // y2 = SaveY;
+        //    }
+        //    height = Math.Abs(height);
+        //}
 
         private void MysticalDraw_Paint(object sender, PaintEventArgs e)
         {
             if (x1 >= 0 && y1 >= 0 && x2 >= 0 && y2 >= 0)
             {
-                width = (x2 - x1);
-                SaveX = x1;
-                if (width < 0)
-                {
-                    SaveX = x1;
-                    x1 = x2;
-                    //x2 = SaveX;
-                }
-                width = Math.Abs(width);
-                height = (y2 - y1);
-                SaveY = y1;
-                if (height < 0)
-                {
-                    SaveY = y1;
-                    y1 = y2;
-                    // y2 = SaveY;
-                }
-                height = Math.Abs(height);
+                width = Math.Abs(x1-x2);
+                height = Math.Abs(x2-x1);
                 switch (figureType)
                 {
 
@@ -179,7 +184,7 @@ namespace WindowsFormsApp5
                         break;
 
                     case 4:
-                        newFigure = new Circle(x1, y1, (width <= height) ? width : height, pen);
+                        newFigure = new Circle(x1, y1, (width >= height) ? width : height, pen);
                         break;
 
                     case 5:
@@ -207,8 +212,8 @@ namespace WindowsFormsApp5
                 }
 
                 newFigure.Draw(graphics);
-              //  x1 = SaveX;
-              //  y1 = SaveY;
+                //x1 = SaveX;
+                //y1 = SaveY;
 
             }
         }
